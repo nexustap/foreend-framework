@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html ng-app>
+<head ng-controller="assetsCtrl">
+<meta charset="utf-8">
+<meta
+	name="viewport"
+	content="width=device-width, initial-scale=1.0"
+/>
+<meta
+	http-equiv="pragma"
+	content="no-cache"
+>
+<meta
+	http-equiv="Cache-Control"
+	content="no-cache, must-revalidate"
+>
+<meta
+	http-equiv="expires"
+	content="Wed, 26 Feb 1997 08:21:57 GMT"
+>
+<meta
+	content="width=device-width,initial-scale=1"
+	name="viewport"
+/>
+<title app-desc="title">ITSP 3.0</title>
+<link
+	ng-href="{{lib.bootstrap.css}}"
+	rel="stylesheet"
+>
+<!-- custom style css -->
+<link
+	rel='stylesheet'
+	type='text/css'
+	ng-href='{{lib.dynatree.css}}'
+>
+<link
+	rel="stylesheet"
+	ng-href="{{lib.jqueryui.css}}"
+/>
+<link
+	rel="shortcut icon"
+	href="/images/favicon.ico"
+>
+<link
+	rel='stylesheet'
+	type='text/css'
+	href='http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.css'
+>
+<link
+	rel='stylesheet'
+	type='text/css'
+	href='/css/common.css'
+>
+<style type="text/css">
+</style>
+</head>
+<body
+	ng-controller="MainCtrl"
+	class="navbar-fixed"
+>
+	<a
+		id="menu-toggler"
+		class="menu-toggler"
+		href="#"
+	> <span class="menu-text"></span>
+	</a>
+	<!-- 顶部导航-start -->
+	<div class="navbar navbar-fixed-top">
+		<header ng-include="nav.partialUrl"></header>
+	</div>
+	<!-- 顶部导航-end -->
+	<!-- 工作区-start -->
+	<div class="main-container">
+		<!-- 左侧菜单-start -->
+		<div class="sidebar fixed">
+			<div class="sidebar-tool">
+				<table>
+					<tr>
+						<td width="100%"><input
+							id="sidebar-seach"
+							type="text"
+							class="form-control"
+							placeholder="搜索菜单"
+						></td>
+						<td><div
+								id="sidebar-collapse"
+								class="btn"
+							>
+								<i class="glyphicon glyphicon-chevron-left"></i>
+							</div></td>
+					</tr>
+				</table>
+			</div>
+			<div id="sidebar-tree" ailk-side ng-controller="HomeSideController"></div>
+		</div>
+		<!-- 左侧菜单-end -->
+		<!-- 右侧内容-start -->
+		<div
+			class="main-content"
+			style="margin-top: 5px;"
+		>
+			<div ng-view></div>
+		</div>
+		<!-- 右侧内容-end -->
+	</div>
+	<!-- 工作区-end -->
+	<!-- 版本信息 -->
+	<div class="version-info">
+		<i class="glyphicon glyphicon-info-sign"></i>
+		<span class="label label-default" style="display: none;" app-desc="framework"></span>
+	</div>
+	<!-- javascripts -->
+	<!--[if lt IE 9]>
+  <script src="/lib/bootstrap/assets/js/html5shiv.js"></script>
+  <script src="/lib/bootstrap/assets/js/respond.min.js"></script>
+  <![endif]-->
+	<script
+		type="text/javascript"
+		src="/lib/angular/angular.min.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/lib/jquery/jquery-1.9.1.min.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/lib/bootstrap/js/bootstrap.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/lib/jquery-ui/js/jquery-ui-1.10.3.custom.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/lib/utils/jquery.sprintf.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/lib/utils/jquery.cookie.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/lib/utils/dynatree/jquery.dynatree.js"
+	></script>
+	<!--jqGrid-->
+	<script
+		type="text/javascript"
+		src="/lib/utils/jqGrid/jqGrid/js/jquery.jqGrid.min.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/lib/utils/jqGrid/jqGrid/js/i18n/grid.locale-en.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/lib/utils/jqGrid/jquery-ui-1.10.3.custom.min.js"
+	></script>
+	<!--end jqGrid-->
+	<script
+		type="text/javascript"
+		src="/js/common.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/js/home/SideModel.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/js/home/SideController.js"
+	></script>
+	<script
+		type="text/javascript"
+		src="/js/MainController.js"
+	></script>
+	<!-- end  javascripts-->
+	<script type="text/javascript">
+		$(function() {
+			$("#menu-toggler").click(function() {
+				$(".sidebar").removeClass("menu-min").toggleClass("display");
+				if ($(".sidebar").is(":visible")) {
+					$("#sidebar-tree, #sidebar-seach").show();
+					$("#sidebar-collapse").find('[class*="glyphicon-"]:eq(0)').removeClass("glyphicon-chevron-right");
+				}
+				return false
+			});
+			$("#sidebar-collapse").click(function() {
+				$(this).find('[class*="glyphicon-"]:eq(0)').toggleClass("glyphicon-chevron-right");
+				$(".sidebar").toggleClass('menu-min');
+				$("#sidebar-tree, #sidebar-seach").toggle();
+			});
+			$(".version-info").hover(function() {
+				$(this).find(".label").toggle();
+			});
+			console.log($.fn.tap ? "tap" : "click")
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+@IMPORT url("../lib/bootstrap/css/bootstrap.css");
+@IMPORT url("../lib/jquery-ui/css/ui-lightness/jquery-ui-1.10.3.custom.css");
+@IMPORT url("../lib/utils/dynatree/skin-vista/ui.dynatree.css");
+@IMPORT url("../lib/messenger/css/messenger.css");
+@IMPORT url("../lib/messenger/css/messenger-theme-air.css");
+@IMPORT url("./common.css");

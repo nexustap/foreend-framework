@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <title>ITSP3.0登陆</title>
+    <link rel='shortcut icon' href="images/favicon.ico">
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+
+        .container-fluid {
+            margin: 0 auto;
+            height: 100%;
+            padding: 51px 15px 0 15px;
+        }
+
+        .table_layout {
+            display: table;
+            height: 100%;
+            width: 100%;
+        }
+
+        .cell_middle_layout {
+            min-width: 100%;
+            width: 100%;
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+        }
+
+        .panel{
+            padding: 0;
+            margin: 15px 0 15px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid" style="border: 1px solid red">
+    <div class="table_layout">
+        <div class="cell_middle_layout">
+            <div class="row" style="border: 1px solid red">
+                <div class="col-md-4 col-md-offset-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">登陆到ITSP3.0</div>
+                        <div class="panel-body">
+                            <form class="form">
+                                <div class="form-group">
+                                    <label>用户名</label>
+                                    <input type="text" class="form-control" placeholder="输入登陆用户名" tabindex="1">
+                                </div>
+                                <div class="form-group">
+                                    <label>密码</label>
+                                    <input type="password" class="form-control" placeholder="输入登陆密码" tabindex="2">
+                                </div>
+                                <div class="form-group">
+                                    <div class="pull-right">
+                                        <button type="submit" class="btn btn-success">登陆</button>
+                                    </div>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox"> 记住登陆?
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
