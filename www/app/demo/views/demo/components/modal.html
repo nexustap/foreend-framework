@@ -1,0 +1,38 @@
+<div ng-controller="modalCtrl">
+
+<script type="text/ng-template" id="myModalContent.html">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="width:90%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+                <label class="checkbox-inline" ng-repeat="item in items">
+                  <input type="radio" id="inlineCheckbox1" ng-model="selected.item" value="{{item}}"> {{ item }}
+                </label>
+            <br />
+            Selected: <b>{{ selected.item }}</b>
+      </div>
+      <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</script>
+
+<div ng-include="modalsrc"></div>
+
+    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" ng-click="open()">
+     打开模态框</button>
+    <div style="margin:10px;"></div>
+    <div class="input-group input-group-sm" ng-show="selected">
+      <span class="input-group-addon">模态框结果: </span>
+      <div type="text" class="form-control form-control-static">{{ result }}</div>
+    </div>
+
+</div>

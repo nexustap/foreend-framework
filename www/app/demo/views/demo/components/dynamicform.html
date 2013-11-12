@@ -1,0 +1,20 @@
+<div ng-controller="dynaformCtrl">
+	<div>
+		<button type="submit" class="btn btn-success" ng-click="displayRemoteForm()">显示远程表单</button>
+		<button type="submit" class="btn btn-success" ng-click="displayLocalForm()">显示本地表单</button>
+		<button type="submit" class="btn btn-primary" ng-click="getFormValue()">获取表单内容</button>
+	</div>
+	<div style="margin:10px;"></div>
+	<div class="row">
+		<div ng-include="'./views/demo/components/res/formelements.html'" ng-controller="formelementsCtrl" ng-model=" params ">
+			
+		</div>
+	</div>
+	<div style="margin:10px;"></div>
+	<div ng-show="elements">
+  		<div class="input-group input-group-sm">
+  			<span class="input-group-addon">输入结果</span>
+  			<pre class="form-control">{{result}}</pre>
+  		</div>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<div ng-controller="tableCtrl">
+	<div class="row">
+		<ng-include src="'./views/demo/components/res/formelements.html'" ng-model="params" ng-controller="formelementsCtrl">
+		</ng-include>
+	</div>
+	<div>
+		<button type="submit" class="btn btn-success" ng-click="query()">查询</button>
+	</div>
+	<div style="margin:10px;"></div>
+	<table id="list4"></table>
+	<div id="pager4"></div>
+</div>

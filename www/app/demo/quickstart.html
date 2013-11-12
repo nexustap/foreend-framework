@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="Cache-Control"  content="no-cache, must-revalidate">
+  <meta http-equiv="expires"  content="Wed, 26 Feb 1997 08:21:57 GMT">
+  <title app-desc="name">loading...</title>
+
+  <!-- Loading framwork css lib -->
+  <link rel="stylesheet" href="../framework/css/framework.css" >
+
+  <!-- custom style css -->
+  <link rel='shortcut icon' href="images/favicon.ico">
+  <link rel='stylesheet'  type='text/css' href='css/main.css'>
+</head>
+
+<body  ng-controller="testCtrl" class="container-fluid">
+  
+  <h1>Controller Sample</h1>
+  <button ng-click="clickMe()">click Me!</button>
+  <div>scope sample:<font color="red">{{helloworld.title}}</font></div>
+
+
+  <h1>Cookie Sample</h1>
+  <input ng-model="cookieValue" placeholder="输入任何值记录cookie">
+  <button ng-click="cookieMe()">cookie Me!</button>
+  <button ng-click="displayCookie()">Display Me!</button>
+  <button ng-click="removeCookie()">Remove Me!</button>
+  <div>cookie sample:<font color="red">{{helloworld.cookieValue}}</font></div>
+
+  <h1>JSONP Sample </h1>
+   <button ng-click="fetchUrl()">Fetch Me!</button>
+  <div>JSONP sample:
+      <pre>http status code: {{status}}</pre>
+      <pre>http response data: {{data}}</pre>
+  </div>
+
+  <hr>
+  <div framework-desc="name">version</div>
+
+  <script type="text/javascript" data-main="js/main" src="../framework/lib/requirejs/require.js"></script>
+</body>
+</html>

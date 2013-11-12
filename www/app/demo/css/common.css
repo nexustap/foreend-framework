@@ -1,0 +1,40 @@
+html, body {
+    padding: 5px;
+    width: 100%;
+    opacity: 1;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    transition: opacity 1s;
+}
+
+.custom-header {
+    min-height: 32px;
+    height: 32px;
+}
+
+.custom-header .custom-header-brand {
+    margin-top: 5px; 
+}
+
+/*--版本信息-------------------------------------------------------------*/
+.version-info {
+    border: 0;
+    bottom: 2px;
+    line-height: 24px;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+/*--适应屏幕-------------------------------------------------------------*/
+@media only screen and (max-width: 979px) {
+    .navbar-brand {
+        margin-left: 55px;
+    }
+
+    .version-info {
+        display: none;
+    }
+
+}

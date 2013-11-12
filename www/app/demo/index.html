@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <title app-desc="name">loading...</title>
+
+    <!-- Loading framwork css lib -->
+    <link rel="stylesheet" href="../framework/css/framework.css" >
+
+    <link rel='shortcut icon' href="./images/favicon.ico">
+    <link rel='stylesheet' type='text/css' href='./css/main.css'>
+</head>
+<body ng-controller="homeCtrl">
+
+    <header class="navbar navbar-default navbar-fixed-top custom-header">
+        <div class="navbar-inner">
+        <div class="container">
+        <div class="navbar-header custom-header-brand" app-desc="name">loading...
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <div class="version-info pull-right">
+                <a href="#" class="btn">
+                    <i class="glyphicon glyphicon-info-sign"></i>
+                </a>
+                <span class="label label-default" style="display: none;" framework-desc="name">版本信息</span>
+            </div>
+        </nav>
+        </div>
+        </div>
+    </header>
+<div style="margin: 35px;"></div>
+        <div class="row">
+            <div class="col-xs-12 col-md-3 col-lg-3" ng-controller="homeSideCtrl">
+
+<div class="panel-group" id="accordion">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          框架使用向导
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+       <a ng-repeat="menu in menus.framework" href="{{menu.href}}"  class="list-group-item">{{menu.title}}</a>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Bootstrap界面组件
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse in">
+       <a ng-repeat="menu in menus.bootstrap" href="{{menu.href}}"  class="list-group-item">{{menu.title}}</a>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          必备的技术网站
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+       <a ng-repeat="menu in menus.web" href="{{menu.href}}"  class="list-group-item">{{menu.title}}</a>
+    </div>
+  </div>
+</div>
+            </div>
+            <div class="col-xs-12 col-md-9 col-lg-9">
+                <div ng-view></div>
+            </div>
+        </div>
+
+    <script type="text/javascript" src="../framework/lib/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="../framework/lib/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+    <script type="text/javascript" src="../framework/lib/utils/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../framework/lib/utils/dynatree/jquery.dynatree.js"></script>
+    <script type="text/javascript">
+
+    $(function(){
+
+        //版本信息
+        $(".version-info").hover(function () {
+            $(this).find(".label").toggle();
+        });
+
+        //树形菜单
+        $.getJSON("js/data/modules.json",function(data){ 
+            $("#tree").dynatree({
+                onActivate: function(node) {
+                    console.debug(node.data.href);
+                    if(node.data.href){
+                        console.debug('ailkSidebar / node:' + node);
+                    }
+                },
+                children: data
+            });
+        });
+    });
+</script>
+
+    <script type="text/javascript" data-main="js/main.js" src="../framework/lib/requirejs/require.js"></script>
+</body>
+</html>

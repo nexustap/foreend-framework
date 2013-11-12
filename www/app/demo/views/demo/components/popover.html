@@ -1,0 +1,46 @@
+<div ng-controller="popoverCtrl">
+    <div>
+      <h4>动态弹出框</h4>
+      <hr />
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group">
+            <span class="input-group-addon">动态弹出框:</span>
+             <input type="text" class="form-control" ng-model="dynamicPopoverText">
+          </div>
+          <div style="margin:10px;"></div>
+          <div class="input-group">
+            <span class="input-group-addon">动态弹出文本: </span>
+            <input type="text" class="form-control" ng-model="dynamicPopover">
+          </div>
+          <div style="margin:10px;"></div>
+          <div class="input-group">
+            <span class="input-group-addon">动态弹出框标题: </span>
+            <input type="text" class="form-control" ng-model="dynamicPopoverTitle">
+          </div>
+          <div style="margin:10px;"></div>
+          <div class="input-group">
+            <button popover="{{dynamicPopover}}" class="btn btn-default" popover-title="{{dynamicPopoverTitle}}" class="btn btn-default">{{dynamicPopoverText}}</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin:40px;"></div>
+    <div>
+      <h4>弹出位置</h4>
+      <hr />
+      <button popover-placement="top" popover="顶部弹出!" class="btn btn-default">顶部</button>
+      <button popover-placement="left" popover="左边弹出!" class="btn btn-default">左边</button>
+      <button popover-placement="right" popover="右边弹出!" class="btn btn-default">右边</button>
+      <button popover-placement="bottom" popover="底部弹出!" class="btn btn-default">底部</button>
+    </div>
+   <div style="margin:40px;"></div>
+    <div>
+      <h4>触发弹出</h4>
+      <hr />
+      <button popover="触发自动弹出" popover-trigger="mouseenter" class="btn btn-default">鼠标移过来</button>
+      <input type="text" value="文本框" 
+        popover="点击文本弹出内容" 
+        popover-trigger="focus" />
+    </div>
+</div>

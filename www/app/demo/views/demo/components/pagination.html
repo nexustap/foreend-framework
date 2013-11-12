@@ -1,0 +1,30 @@
+<div ng-controller="paginationCtrl">
+    <h4>一般</h4>
+    <pagination total-items="totalItems" page="currentPage" class="pagination pagination-sm"></pagination>
+    <pagination boundary-links="true" total-items="totalItems" page="currentPage" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" class="pagination pagination-sm"></pagination>
+    <div style="margin:10px;"></div>
+    <pagination direction-links="false" boundary-links="true" total-items="totalItems" page="currentPage" class="pagination pagination-sm"></pagination>
+    <div style="margin:10px;"></div>
+    <pagination direction-links="false" total-items="totalItems" page="currentPage" num-pages="smallnumPages" class="pagination pagination-sm"></pagination>
+    <div style="margin:10px;"></div>
+    <button class="btn btn-default btn-sm" ng-click="setPage(3)">设置当前页面: 3</button>
+    当前页面: {{currentPage}}
+
+    <hr />
+
+    <h4>前后翻页</h4>
+    <pager total-items="totalItems" page="currentPage" class="pager"></pager>
+
+    <hr />
+    <h4>限制页数</h4>
+    <pagination total-items="bigTotalItems" page="bigCurrentPage" max-size="maxSize" boundary-links="true" class="pagination pagination-sm"></pagination><div style="margin:10px;"></div>
+    <pagination total-items="bigTotalItems" page="bigCurrentPage" max-size="maxSize" boundary-links="true" rotate="false"  num-pages="numPages" items-per-page="7" class="pagination pagination-sm"></pagination>
+
+    <pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+
+    <hr />
+
+    <h4>显示上面页面内容</h4>
+    <div style="margin:10px;"></div>
+    <div>{{pageContent}}</div>
+</div>

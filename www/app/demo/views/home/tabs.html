@@ -1,0 +1,37 @@
+<div style="position: absolute; z-index:999; margin: auto;">
+	<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+</div>
+<div style="width:100%">
+	<ul class="nav nav-tabs">
+		<li ng-class="{'active':tabHomeActive}">
+			<a href="#home" data-toggle="tab" ng-click="clickMe('home')">首页</a>
+		</li>
+		<li ng-repeat="tab in tabs" ng-class="{'active':tab.active}">
+			<a href="#tab{{tab.id}}" data-toggle="tab" ng-click="clickMe(tab.id)">{{tab.title}}</a>
+		</li>
+	</ul>
+	<div class="tab-content" >
+		<div class="tab-pane" ng-class="{'active':tabHomeActive}" id="home">首页内容</div>
+		<div ng-repeat="tab in tabs" class="tab-pane" ng-class="{'active':tab.active}" id="tab{{tab.id}}">
+			<div>
+				<h6 ng-show="tabCloseMsg" class="fade in pull-left"> <i>标签页&nbsp; <font color="red">{{tabCloseMsg}}</font>
+						&nbsp;已经关闭</i> 
+				</h6>
+				<button type="button" class="btn btn-danger btn-xs pull-right" ng-click="closeMe(tab.id)">
+					<span class="glyphicon glyphicon-remove"></span>
+				</button>
+			</div>
+			<br>
+			<div style="margin-top:10px;witdth:100%">
+				<div ng-switch="tab.type" >
+					<div ng-switch-when="frame">
+					<iframe frameBorder=0 scrolling=no ng-src="{{tab.path}}" width="100%" height="800"></iframe>
+					</div>
+					<div ng-switch-default>
+						<div ng-include="tab.path"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

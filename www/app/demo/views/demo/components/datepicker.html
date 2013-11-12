@@ -1,0 +1,11 @@
+<div ng-controller="datepickerCtrl">
+    <pre>选择的日期是: <em>{{dt | date:'yyyy年MM月dd日' }}</em></pre>
+    <div class="form-horizontal">
+        <input type="date"  ng-model="dt" ng-required="true" />
+    </div>
+    <hr />
+    <button class="btn btn-small btn-primary" ng-click="today()">当前日期</button>
+    <button class="btn btn-small btn-primary" ng-click="dt = '2009-08-24'">2009-08-24</button>
+    <button class="btn btn-small btn-danger" ng-click="clear()">清除</button>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="dropdown" ng-controller="dropdownCtrl">
+	<div>{{msg}}</div>
+  <a data-toggle="dropdown" class="btn btn-info" role="button" href="#">下拉菜单 <span class="caret"></span></a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    <li ng-repeat="item in items">
+      <a ng-click="clickMenu(item.msg)">{{item.title}}</a>
+    </li>
+   </ul>
+</div>

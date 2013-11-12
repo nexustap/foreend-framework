@@ -1,0 +1,6 @@
+	<div class="col-lg-4" style="margin-top:5px;" ng-repeat="element in elements">
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon" style="width:80px; text-align:left">{{element.label}}</span>
+			<input type="{{element.type}}" ng-model="element.value" class="form-control" style="width:140px;" placeholder="{{element.placeholder}}">
+		</div>
+	</div>	

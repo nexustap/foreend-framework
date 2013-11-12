@@ -1,0 +1,9 @@
+<div ng-controller="alertCtrl">
+	<button class='btn btn-primary' ng-click="addAlert()">Add Alert</button>
+	<div class="col-xs-12 col-md-8 col-lg-8" style="position: absolute; z-index:999; margin: auto;margin-top:2px;" >
+		
+		<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+		
+	</div>
+
+</div>
